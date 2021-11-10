@@ -1,5 +1,5 @@
 import pandas as pd
-from scipy.stats.stats import mode
+# from scipy.stats.stats import mode
 from sklearn.model_selection import train_test_split
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier

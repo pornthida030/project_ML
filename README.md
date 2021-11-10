@@ -1,7 +1,7 @@
 ### ชื่อ พรธิดา สุขสรรควณิช รหัสนิสิต 6210451314 หมู่ 200
 ### Web 
 - Framework ที่ใช้ [Flask](https://flask.palletsprojects.com/en/2.0.x/)
-- Frontend Framework ที่ใช้ Bootstrap
+- Frontend Framework ที่ใช้ [Bootstrap](https://getbootstrap.com/)
 
 ### Model
 - ใช้ K-nearest neighbors algorithm ในการทำนาย
