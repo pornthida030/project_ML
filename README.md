@@ -1,6 +1,7 @@
+### ชื่อ พรธิดา สุขสรรควณิช รหัสนิสิต 6210451314 หมู่ 200
 ### Web 
-Framework ที่ใช้ Flask
-Frontend Framework ที่ใช้ Bootstrap
+- Framework ที่ใช้ Flask
+- Frontend Framework ที่ใช้ Bootstrap
 
 ### Model
 - ใช้ K-nearest neighbors algorithm ในการทำนาย
