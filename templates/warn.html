@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <title>ผลการทำนาย</title>
+</head>
+<body>
+    <div style="text-align: center; padding: 50px; margin: 50px; ">
+        
+    {% if predict[0] >= 2 %}
+    <img src="../static/warn.png" alt="warn" width="200" height="200">
+    <div>
+    <h1>ขออภัยไม่สามารถทำนาย</h1>
+    <br>
+    
+    <p class="font-monospace" >ชื่อของสินค้า: {{pro}}</p>
+    <p class="font-monospace" >เดือน: {{month_text}}</p>
+    <p class="font-monospace" >ราคา: {{price}} บาท</p>
+    {%if predict[0]==4%}
+    <p class="font-monospace">หมายเหตุ: เนื่องจากมีข้อมูลในชุดข้อมูลน้อยไป โดยที่ในการทำนายจะใช้ชุดข้อมูลของปี 2018 - 2019 เท่านั้น ซึ่งเอาชุดข้อมูลมาจาก <a href="https://data.go.th/dataset/34">data.go.th</a></p>
+    {%else%}
+    <p class="font-monospace">หมายเหตุ: เนื่องจากไม่พบเดือนหรือสินค้าดังกล่าว โดยที่ในการทำนายจะใช้ชุดข้อมูลของปี 2018 - 2019 เท่านั้น ซึ่งเอาชุดข้อมูลมาจาก <a href="https://data.go.th/dataset/34">data.go.th</a></p>
+    {%endif%}
+    <br>
+    <a href="/" class="btn btn-primary">Back</a>
+    </div>
+    
+    {%else%}
+    {%if predict[0] == 0 %}
+    <img src="../static/yes.png" alt="yes" width="200" height="200">
+    {%else%}
+    <img src="../static/no.png" alt="no" width="200" height="200">
+    {%endif%}
+    <div>
+    <h1>คำทำนายของคุณ</h1>
+    <br>
+    <p class="font-monospace" >ชื่อของสินค้า: {{pro}}</p>
+    <p class="font-monospace" >เดือน: {{month_text}}</p>
+    <p class="font-monospace" >ราคา: {{price}} บาท</p>
+    <p class="font-monospace">คำทำนาย: {{text_predict}}</p>
+    <p>ค่าเฉลี่ยข้อมูล(ราคา): {{avg}} บาท</p>
+    <p >ความแม่นยำ: {{score*100}} %</p>
+    <p class="font-monospace">หมายเหตุ: ในการทำนายจะใช้ชุดข้อมูลของปี 2018 - 2019 เท่านั้น ซึ่งเอาชุดข้อมูลมาจาก <a href="https://data.go.th/dataset/34">data.go.th</a></p>
+    <br>
+    <a href="/" class="btn btn-primary">Back</a>
+    </div>
+    {%endif%}
+    
+    
+    
+</body>
+</html>
